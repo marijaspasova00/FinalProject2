@@ -1,0 +1,102 @@
+﻿@using FinalProjectAmPlansForLoans.Domain.Models
+@using FinalProjectAmPlansForLoans.ViewModels
+@model LoanInputViewModel
+
+@{
+    ViewBag.Title = "Loan Amortization Plan";
+}
+
+<style>
+    /* Styles omitted for brevity */
+</style>
+
+<h2>Loan Amortization Schedule</h2>
+
+<div class="container">
+    <form asp-action="CalculateAmortization" method="post">
+        <!-- Dropdown for Product Selection -->
+       @*  <div class="form-group">
+            <label asp-for="SelectedProductId">Select Product:</label>
+            <select asp-for="SelectedProductId" asp-items="Model.Products" class="form-control"></select>
+            <span asp-validation-for="SelectedProductId" class="text-danger"></span>
+        </div> *@
+     <select asp-for="SelectedProductId" asp-items="Model.Products" class="form-control">
+    <option value="">-- Select Product --</option>
+</select>
+
+        <!-- Input for Principal Amount -->
+        <div class="form-group">
+            <label asp-for="Principal">Principal Amount:</label>
+            <input asp-for="Principal" type="number" class="form-control" />
+            <span asp-validation-for="Principal" class="text-danger"></span>
+        </div>
+
+        <!-- Input for Interest Rate -->
+        <div class="form-group">
+            <label asp-for="InterestRate">Interest Rate (%):</label>
+            <input asp-for="InterestRate" type="number" class="form-control" />
+            <span asp-validation-for="InterestRate" class="text-danger"></span>
+        </div>
+
+        <!-- Input for Number of Installments -->
+        <div class="form-group">
+            <label asp-for="NumberOfInstallments">Number of Installments:</label>
+            <input asp-for="NumberOfInstallments" type="number" class="form-control" />
+            <span asp-validation-for="NumberOfInstallments" class="text-danger"></span>
+        </div>
+
+        <!-- Dropdown for Payment Frequency -->
+        <div class="form-group">
+            <label asp-for="SelectedPaymentFrequency">Payment Frequency:</label>
+            <select asp-for="SelectedPaymentFrequency" asp-items="Model.PaymentFrequencies" class="form-control"></select>
+            <span asp-validation-for="SelectedPaymentFrequency" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary form-control">Calculate</button>
+        </div>
+    </form>
+
+    <!-- Amortization Plans Table -->
+    @if (Model.AmortizationPlans != null && Model.AmortizationPlans.Any())
+    {
+            <div id="amortizationPlanSection">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Installment Number</th>
+                            <th>Payment Date</th>
+                            <th>Total Amount</th>
+                            <th>Principal</th>
+                            <th>Interest</th>
+                            <th>Remaining Amount</th>
+                            <th>Expense</th>
+                            <th>First Installment Date</th>
+                            <th>Closing Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var plan in Model.AmortizationPlans)
+                    {
+                                <tr>
+                                    <td>@plan.NoInstallment</td>
+                                    <td>@plan.PaymentDate.ToShortDateString()</td>
+                                    <td>@plan.TotalAmount.ToString("C")</td>
+                                    <td>@plan.Principal.ToString("C")</td>
+                                    <td>@plan.Interest.ToString("C")</td>
+                                    <td>@plan.RemainingAmount.ToString("C")</td>
+                                    <td>@plan.Expense.ToString("C")</td>
+                                    <td>@plan.FirstInstallmentDate.ToShortDateString()</td>
+                                    <td>@plan.ClosingDate.ToShortDateString()</td>
+                                </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+    }
+</div>
+
+@section Scripts {
+        <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

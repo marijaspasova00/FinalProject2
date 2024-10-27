@@ -1,0 +1,14 @@
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Domain\bin\Debug\net8.0\FinalProjectAmPlansForLoans.Domain.deps.json
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Domain\bin\Debug\net8.0\FinalProjectAmPlansForLoans.Domain.runtimeconfig.json
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Domain\bin\Debug\net8.0\FinalProjectAmPlansForLoans.Domain.dll
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Domain\bin\Debug\net8.0\FinalProjectAmPlansForLoans.Domain.pdb
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Domain\obj\Debug\net8.0\FinalProjectAmPlansForLoans.Domain.csproj.AssemblyReference.cache
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Domain\obj\Debug\net8.0\FinalProjectAmPlansForLoans.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Domain\obj\Debug\net8.0\FinalProjectAmPlansForLoans.Domain.AssemblyInfoInputs.cache
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Domain\obj\Debug\net8.0\FinalProjectAmPlansForLoans.Domain.AssemblyInfo.cs
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Domain\obj\Debug\net8.0\FinalProjectAmPlansForLoans.Domain.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Domain\obj\Debug\net8.0\FinalProjectAmPlansForLoans.Domain.dll
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Domain\obj\Debug\net8.0\refint\FinalProjectAmPlansForLoans.Domain.dll
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Domain\obj\Debug\net8.0\FinalProjectAmPlansForLoans.Domain.pdb
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Domain\obj\Debug\net8.0\FinalProjectAmPlansForLoans.Domain.genruntimeconfig.cache
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Domain\obj\Debug\net8.0\ref\FinalProjectAmPlansForLoans.Domain.dll

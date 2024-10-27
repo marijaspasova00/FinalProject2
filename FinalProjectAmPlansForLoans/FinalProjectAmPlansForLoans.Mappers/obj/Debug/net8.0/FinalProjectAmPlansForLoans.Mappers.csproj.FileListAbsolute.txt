@@ -1,0 +1,17 @@
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Mappers\bin\Debug\net8.0\FinalProjectAmPlansForLoans.Mappers.deps.json
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Mappers\bin\Debug\net8.0\FinalProjectAmPlansForLoans.Mappers.dll
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Mappers\bin\Debug\net8.0\FinalProjectAmPlansForLoans.Mappers.pdb
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Mappers\bin\Debug\net8.0\FinalProjectAmPlansForLoans.Domain.dll
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Mappers\bin\Debug\net8.0\FinalProjectAmPlansForLoans.ViewModels.dll
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Mappers\bin\Debug\net8.0\FinalProjectAmPlansForLoans.Domain.pdb
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Mappers\bin\Debug\net8.0\FinalProjectAmPlansForLoans.ViewModels.pdb
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Mappers\obj\Debug\net8.0\FinalProjectAmPlansForLoans.Mappers.csproj.AssemblyReference.cache
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Mappers\obj\Debug\net8.0\FinalProjectAmPlansForLoans.Mappers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Mappers\obj\Debug\net8.0\FinalProjectAmPlansForLoans.Mappers.AssemblyInfoInputs.cache
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Mappers\obj\Debug\net8.0\FinalProjectAmPlansForLoans.Mappers.AssemblyInfo.cs
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Mappers\obj\Debug\net8.0\FinalProjectAmPlansForLoans.Mappers.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Mappers\obj\Debug\net8.0\FinalPro.E1ACBF53.Up2Date
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Mappers\obj\Debug\net8.0\FinalProjectAmPlansForLoans.Mappers.dll
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Mappers\obj\Debug\net8.0\refint\FinalProjectAmPlansForLoans.Mappers.dll
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Mappers\obj\Debug\net8.0\FinalProjectAmPlansForLoans.Mappers.pdb
+C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Mappers\obj\Debug\net8.0\ref\FinalProjectAmPlansForLoans.Mappers.dll
