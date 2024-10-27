@@ -108,10 +108,10 @@ namespace AmortizationPlansForLoansFinalProject.Services.Services.Implementation
                         throw new ArgumentException("Invalid payment frequency.");
                 }
 
-                amortizationPlan.Installments.Add(installmentAmount); 
+                amortizationPlan.Installments.Add(installmentAmount); // Add installment amount to the list
             }
 
-            amortizationPlan.Interest = amortizationPlan.Installments.Sum() - loanInput.Principal; 
+            amortizationPlan.Interest = amortizationPlan.Installments.Sum() - loanInput.Principal; // Calculate total interest paid
             return amortizationPlan;
         }
 
@@ -150,15 +150,15 @@ namespace AmortizationPlansForLoansFinalProject.Services.Services.Implementation
                 {
                     case PaymentFrequency.Monthly:
                         installmentAmount = CalculateMonthlyPayment(loanInput.Principal, loanInput.InterestRate, loanInput.NumberOfInstallments);
-                        installmentDate = loanInput.FirstInstallmentDate.AddMonths(i - 1); // Monthly 
+                        installmentDate = loanInput.FirstInstallmentDate.AddMonths(i - 1); // Monthly increment
                         break;
                     case PaymentFrequency.Quarterly:
                         installmentAmount = CalculateQuarterlyPayment(loanInput.Principal, loanInput.InterestRate, loanInput.NumberOfInstallments);
-                        installmentDate = loanInput.FirstInstallmentDate.AddMonths(3 * (i - 1)); // Quarterly 
+                        installmentDate = loanInput.FirstInstallmentDate.AddMonths(3 * (i - 1)); // Quarterly increment
                         break;
                     case PaymentFrequency.Yearly:
                         installmentAmount = CalculateYearlyPayment(loanInput.Principal, loanInput.InterestRate);
-                        installmentDate = loanInput.FirstInstallmentDate.AddYears(i - 1); // Yearly 
+                        installmentDate = loanInput.FirstInstallmentDate.AddYears(i - 1); // Yearly increment
                         break;
                     default:
                         throw new ArgumentException("Invalid payment frequency.");

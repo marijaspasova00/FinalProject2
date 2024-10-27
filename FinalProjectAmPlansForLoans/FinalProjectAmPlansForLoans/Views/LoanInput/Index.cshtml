@@ -14,15 +14,19 @@
 
 <div class="container">
     <form asp-action="CalculateAmortization" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
         <!-- Dropdown for Product Selection -->
-       @*  <div class="form-group">
-            <label asp-for="SelectedProductId">Select Product:</label>
-            <select asp-for="SelectedProductId" asp-items="Model.Products" class="form-control"></select>
-            <span asp-validation-for="SelectedProductId" class="text-danger"></span>
-        </div> *@
-     <select asp-for="ProductID" asp-items="Model.Products" class="form-control">
-    <option value="">-- Select Product --</option>
-</select>
+        <div class="form-group">
+            <label asp-for="ProductID">Select Product:</label>
+            <select asp-for="ProductID" asp-items="Model.Products" class="form-control">
+                <option value="">-- Select Product --</option>
+            </select>
+
+
+
+            <span asp-validation-for="ProductID" class="text-danger"></span>
+        </div>
 
         <!-- Input for Principal Amount -->
         <div class="form-group">
@@ -60,43 +64,44 @@
     <!-- Amortization Plans Table -->
     @if (Model.AmortizationPlans != null && Model.AmortizationPlans.Any())
     {
-            <div id="amortizationPlanSection">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Installment Number</th>
-                            <th>Payment Date</th>
-                            <th>Total Amount</th>
-                            <th>Principal</th>
-                            <th>Interest</th>
-                            <th>Remaining Amount</th>
-                            <th>Expense</th>
-                            <th>First Installment Date</th>
-                            <th>Closing Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+        <div id="amortizationPlanSection">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Installment Number</th>
+                        <th>Payment Date</th>
+                        <th>Total Amount</th>
+                        <th>Principal</th>
+                        <th>Interest</th>
+                        <th>Remaining Amount</th>
+                        <th>Expense</th>
+                        <th>First Installment Date</th>
+                        <th>Closing Date</th>
+                    </tr>
+                </thead>
+                <tbody>
                     @foreach (var plan in Model.AmortizationPlans)
                     {
-                                <tr>
-                                    <td>@plan.NoInstallment</td>
-                                    <td>@plan.PaymentDate.ToShortDateString()</td>
-                                    <td>@plan.TotalAmount.ToString("C")</td>
-                                    <td>@plan.Principal.ToString("C")</td>
-                                    <td>@plan.Interest.ToString("C")</td>
-                                    <td>@plan.RemainingAmount.ToString("C")</td>
-                                    <td>@plan.Expense.ToString("C")</td>
-                                    <td>@plan.FirstInstallmentDate.ToShortDateString()</td>
-                                    <td>@plan.ClosingDate.ToShortDateString()</td>
-                                </tr>
+                        <tr>
+                            <td>@plan.NoInstallment</td>
+                            <td>@plan.PaymentDate.ToShortDateString()</td>
+                            <td>@plan.TotalAmount.ToString("C")</td>
+                            <td>@plan.Principal.ToString("C")</td>
+                            <td>@plan.Interest.ToString("C")</td>
+                            <td>@plan.RemainingAmount.ToString("C")</td>
+                            <td>@plan.Expense.ToString("C")</td>
+                            <td>@plan.FirstInstallmentDate.ToShortDateString()</td>
+                            <td>@plan.ClosingDate.ToShortDateString()</td>
+                        </tr>
                     }
-                    </tbody>
-                </table>
-            </div>
+                </tbody>
+            </table>
+        </div>
     }
 </div>
 
 @section Scripts {
-        <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 }

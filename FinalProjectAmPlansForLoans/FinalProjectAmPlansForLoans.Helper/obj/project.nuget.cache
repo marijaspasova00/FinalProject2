@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PKXBIhhK6/Y=",
+  "dgSpecHash": "p1ntyF909jE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Helper\\FinalProjectAmPlansForLoans.Helper.csproj",
+  "projectFilePath": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Helper\\FinalProjectAmPlansForLoans.Helper.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LENOVO\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

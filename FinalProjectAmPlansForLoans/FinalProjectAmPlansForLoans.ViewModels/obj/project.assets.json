@@ -8584,11 +8584,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.ViewModels\\FinalProjectAmPlansForLoans.ViewModels.csproj",
+      "projectUniqueName": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.ViewModels\\FinalProjectAmPlansForLoans.ViewModels.csproj",
       "projectName": "FinalProjectAmPlansForLoans.ViewModels",
-      "projectPath": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.ViewModels\\FinalProjectAmPlansForLoans.ViewModels.csproj",
+      "projectPath": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.ViewModels\\FinalProjectAmPlansForLoans.ViewModels.csproj",
       "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.ViewModels\\obj\\",
+      "outputPath": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.ViewModels\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8606,8 +8606,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Domain\\FinalProjectAmPlansForLoans.Domain.csproj": {
-              "projectPath": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Domain\\FinalProjectAmPlansForLoans.Domain.csproj"
+            "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Domain\\FinalProjectAmPlansForLoans.Domain.csproj": {
+              "projectPath": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Domain\\FinalProjectAmPlansForLoans.Domain.csproj"
             }
           }
         }

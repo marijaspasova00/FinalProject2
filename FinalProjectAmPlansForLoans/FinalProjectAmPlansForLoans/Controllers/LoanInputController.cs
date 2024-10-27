@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using FinalProjectAmPlansForLoans.DataAccess.DataContext;
+﻿using FinalProjectAmPlansForLoans.DataAccess.DataContext;
 using FinalProjectAmPlansForLoans.Domain.Enums;
 using FinalProjectAmPlansForLoans.Domain.Models;
 using FinalProjectAmPlansForLoans.Services.Services;
 using FinalProjectAmPlansForLoans.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 public class LoanInputController : Controller
 {
@@ -23,11 +23,12 @@ public class LoanInputController : Controller
     {
         var model = new LoanInputViewModel
         {
-            Products = await _context.Products.Select(p => new SelectListItem
+            model.Products = await _context.Products.Select(p => new SelectListItem
             {
                 Value = p.Id.ToString(),
                 Text = p.ProductName
             }).ToListAsync(),
+
             PaymentFrequencies = Enum.GetValues(typeof(PaymentFrequency))
                                       .Cast<PaymentFrequency>()
                                       .Select(pf => new SelectListItem
@@ -38,32 +39,23 @@ public class LoanInputController : Controller
             SelectedPaymentFrequency = (int)PaymentFrequency.Monthly
         };
 
+        ViewData["Products"] = model.Products;
         return View(model);
     }
+
 
     // POST: LoanInput/CalculateAmortization
     [HttpPost]
     public async Task<IActionResult> CalculateAmortization(LoanInputViewModel model)
     {
-        
-        var products = await _context.Products.ToListAsync();
-        foreach (var p in products)
+        // Validate ProductID before fetching the product
+        if (model.ProductID <= 0)
         {
-            Console.WriteLine($"Product ID: {p.Id}, Product Name: {p.ProductName}");
-        }
-        Console.WriteLine("Selected Product ID: " + model.ProductID); 
-        Console.WriteLine("Principal: " + model.Principal);
-        Console.WriteLine("Interest Rate: " + model.InterestRate);
-        Console.WriteLine("Number of Installments: " + model.NumberOfInstallments);
-
-        if (model.ProductID <= 0) 
-        {
-            ModelState.AddModelError(nameof(model.ProductID), "Please select a valid product."); 
+            ModelState.AddModelError(nameof(model.ProductID), "Please select a valid product.");
             return await ReloadIndexView(model);
         }
 
-
-        var product = await _context.Products.FindAsync(model.ProductID); 
+        var product = await _context.Products.FindAsync(model.ProductID);
         if (product == null)
         {
             ModelState.AddModelError(nameof(model.ProductID), "Invalid product selected.");
@@ -71,29 +63,23 @@ public class LoanInputController : Controller
         }
 
         await ValidateLoanInput(model, product);
-        if (!ModelState.IsValid) 
+        if (!ModelState.IsValid)
         {
             return await ReloadIndexView(model);
         }
 
-
-        var loanInput = new LoanInput // Changed to LoanInput instead of LoanInputViewModel
+        var loanInput = new LoanInput
         {
-            ProductID = model.ProductID, // Ensure ProductID is set correctly
+            ProductID = model.ProductID,
             AgreementDate = model.AgreementDate,
             Principal = model.Principal,
             InterestRate = model.InterestRate,
-            PaymentFrequency = (PaymentFrequency)model.SelectedPaymentFrequency, // Assuming you have this in your ViewModel
+            PaymentFrequency = (PaymentFrequency)model.SelectedPaymentFrequency,
             AdminFee = model.AdminFee,
             FirstInstallmentDate = model.FirstInstallmentDate,
             NumberOfInstallments = model.NumberOfInstallments,
             ClosingDate = model.ClosingDate
         };
-
-        if (loanInput == null)
-        {
-            throw new ArgumentNullException(nameof(loanInput), "LoanInput is null");
-        }
 
         await _loanInputService.AddLoanInputAsync(loanInput);
         var amortizationPlans = await _loanInputService.GetAmortizationPlansByLoanInputAsync(loanInput.Id);
@@ -103,18 +89,21 @@ public class LoanInputController : Controller
             ModelState.AddModelError("", "No amortization plans were generated. Please check your inputs.");
         }
 
-        model.AmortizationPlans = amortizationPlans; 
+        model.AmortizationPlans = amortizationPlans;
         return View("Index", model);
     }
 
-
     private async Task<IActionResult> ReloadIndexView(LoanInputViewModel model)
     {
-        model.Products = await _context.Products.Select(p => new SelectListItem
-        {
-            Value = p.Id.ToString(),
-            Text = p.ProductName
-        }).ToListAsync();
+       var productSelectList = _context.Products
+             .Select(p => new SelectListItem
+             {
+                 Value = p.Id.ToString(),
+                 Text = p.ProductName
+             })
+             .ToList();
+
+        ViewData["Products"] = productSelectList;
 
         model.PaymentFrequencies = Enum.GetValues(typeof(PaymentFrequency))
                                       .Cast<PaymentFrequency>()
@@ -129,8 +118,6 @@ public class LoanInputController : Controller
 
     private async Task ValidateLoanInput(LoanInputViewModel model, Product product)
     {
-
-
         if (product == null)
         {
             throw new ArgumentException("Invalid product ID.");
