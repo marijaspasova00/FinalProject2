@@ -9613,11 +9613,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Domain\\FinalProjectAmPlansForLoans.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Domain\\FinalProjectAmPlansForLoans.Domain.csproj",
       "projectName": "FinalProjectAmPlansForLoans.Domain",
-      "projectPath": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Domain\\FinalProjectAmPlansForLoans.Domain.csproj",
+      "projectPath": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Domain\\FinalProjectAmPlansForLoans.Domain.csproj",
       "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Domain\\obj\\",
+      "outputPath": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -9891,11 +9891,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.csproj",
+      "projectUniqueName": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.csproj",
       "projectName": "FinalProjectAmPlansForLoans",
-      "projectPath": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.csproj",
+      "projectPath": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.csproj",
       "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans\\obj\\",
+      "outputPath": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -9913,20 +9913,20 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.DataAccess\\FinalProjectAmPlansForLoans.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.DataAccess\\FinalProjectAmPlansForLoans.DataAccess.csproj"
+            "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.DataAccess\\FinalProjectAmPlansForLoans.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.DataAccess\\FinalProjectAmPlansForLoans.DataAccess.csproj"
             },
-            "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Domain\\FinalProjectAmPlansForLoans.Domain.csproj": {
-              "projectPath": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Domain\\FinalProjectAmPlansForLoans.Domain.csproj"
+            "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Domain\\FinalProjectAmPlansForLoans.Domain.csproj": {
+              "projectPath": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Domain\\FinalProjectAmPlansForLoans.Domain.csproj"
             },
-            "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Helper\\FinalProjectAmPlansForLoans.Helper.csproj": {
-              "projectPath": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Helper\\FinalProjectAmPlansForLoans.Helper.csproj"
+            "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Helper\\FinalProjectAmPlansForLoans.Helper.csproj": {
+              "projectPath": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Helper\\FinalProjectAmPlansForLoans.Helper.csproj"
             },
-            "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Mappers\\FinalProjectAmPlansForLoans.Mappers.csproj": {
-              "projectPath": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Mappers\\FinalProjectAmPlansForLoans.Mappers.csproj"
+            "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Mappers\\FinalProjectAmPlansForLoans.Mappers.csproj": {
+              "projectPath": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Mappers\\FinalProjectAmPlansForLoans.Mappers.csproj"
             },
-            "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Services\\FinalProjectAmPlansForLoans.Services.csproj": {
-              "projectPath": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Services\\FinalProjectAmPlansForLoans.Services.csproj"
+            "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Services\\FinalProjectAmPlansForLoans.Services.csproj": {
+              "projectPath": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Services\\FinalProjectAmPlansForLoans.Services.csproj"
             }
           }
         }

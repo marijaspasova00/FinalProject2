@@ -45,40 +45,38 @@ public class LoanInputController : Controller
     [HttpPost]
     public async Task<IActionResult> CalculateAmortization(LoanInputViewModel model)
     {
-        // Log all products to check what's in the database
+        
         var products = await _context.Products.ToListAsync();
         foreach (var p in products)
         {
             Console.WriteLine($"Product ID: {p.Id}, Product Name: {p.ProductName}");
         }
-        Console.WriteLine("Selected Product ID: " + model.ProductID); // Updated from SelectedProductId
+        Console.WriteLine("Selected Product ID: " + model.ProductID); 
         Console.WriteLine("Principal: " + model.Principal);
         Console.WriteLine("Interest Rate: " + model.InterestRate);
         Console.WriteLine("Number of Installments: " + model.NumberOfInstallments);
 
-        // Validate ProductID before fetching the product
-        if (model.ProductID <= 0) // Change SelectedProductId to ProductID
+        if (model.ProductID <= 0) 
         {
-            ModelState.AddModelError(nameof(model.ProductID), "Please select a valid product."); // Updated error message
+            ModelState.AddModelError(nameof(model.ProductID), "Please select a valid product."); 
             return await ReloadIndexView(model);
         }
 
-        // Validate the selected product
-        var product = await _context.Products.FindAsync(model.ProductID); // Updated from SelectedProductId
+
+        var product = await _context.Products.FindAsync(model.ProductID); 
         if (product == null)
         {
             ModelState.AddModelError(nameof(model.ProductID), "Invalid product selected.");
             return await ReloadIndexView(model);
         }
 
-        // Validate loan input
         await ValidateLoanInput(model, product);
-        if (!ModelState.IsValid) // Uncommented to ensure validation before proceeding
+        if (!ModelState.IsValid) 
         {
             return await ReloadIndexView(model);
         }
 
-        // Create LoanInput object from ViewModel
+
         var loanInput = new LoanInput // Changed to LoanInput instead of LoanInputViewModel
         {
             ProductID = model.ProductID, // Ensure ProductID is set correctly
@@ -92,13 +90,11 @@ public class LoanInputController : Controller
             ClosingDate = model.ClosingDate
         };
 
-        // Check if model is null
-        if (loanInput == null) // Changed from model to loanInput
+        if (loanInput == null)
         {
             throw new ArgumentNullException(nameof(loanInput), "LoanInput is null");
         }
 
-        // Add loan input and get amortization plans
         await _loanInputService.AddLoanInputAsync(loanInput);
         var amortizationPlans = await _loanInputService.GetAmortizationPlansByLoanInputAsync(loanInput.Id);
 
@@ -107,7 +103,7 @@ public class LoanInputController : Controller
             ModelState.AddModelError("", "No amortization plans were generated. Please check your inputs.");
         }
 
-        model.AmortizationPlans = amortizationPlans; // Ensure this property exists in your ViewModel
+        model.AmortizationPlans = amortizationPlans; 
         return View("Index", model);
     }
 
@@ -134,7 +130,7 @@ public class LoanInputController : Controller
     private async Task ValidateLoanInput(LoanInputViewModel model, Product product)
     {
 
-        // Check if the Product is null, which would indicate an invalid product ID
+
         if (product == null)
         {
             throw new ArgumentException("Invalid product ID.");

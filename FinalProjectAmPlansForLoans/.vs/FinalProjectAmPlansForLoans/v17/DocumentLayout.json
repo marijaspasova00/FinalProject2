@@ -1,34 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\",
+  "WorkspaceRootPath": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E971B624-F0C4-46C2-B4BA-352B44340A72}|FinalProjectAmPlansForLoans.DataAccess\\FinalProjectAmPlansForLoans.DataAccess.csproj|c:\\users\\lenovo\\source\\repos\\finalprojectamplansforloans\\finalprojectamplansforloans.dataaccess\\datacontext\\amplansdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E971B624-F0C4-46C2-B4BA-352B44340A72}|FinalProjectAmPlansForLoans.DataAccess\\FinalProjectAmPlansForLoans.DataAccess.csproj|solutionrelative:finalprojectamplansforloans.dataaccess\\datacontext\\amplansdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E98FEE12-67F7-44E9-9FF3-57B5A759B8A9}|FinalProjectAmPlansForLoans.Domain\\FinalProjectAmPlansForLoans.Domain.csproj|c:\\users\\lenovo\\source\\repos\\finalprojectamplansforloans\\finalprojectamplansforloans.domain\\models\\amplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E98FEE12-67F7-44E9-9FF3-57B5A759B8A9}|FinalProjectAmPlansForLoans.Domain\\FinalProjectAmPlansForLoans.Domain.csproj|solutionrelative:finalprojectamplansforloans.domain\\models\\amplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E98FEE12-67F7-44E9-9FF3-57B5A759B8A9}|FinalProjectAmPlansForLoans.Domain\\FinalProjectAmPlansForLoans.Domain.csproj|c:\\users\\lenovo\\source\\repos\\finalprojectamplansforloans\\finalprojectamplansforloans.domain\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E98FEE12-67F7-44E9-9FF3-57B5A759B8A9}|FinalProjectAmPlansForLoans.Domain\\FinalProjectAmPlansForLoans.Domain.csproj|solutionrelative:finalprojectamplansforloans.domain\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3BE5A5D9-F70D-4A3A-AEAE-19C4608EDB83}|FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.csproj|c:\\users\\lenovo\\source\\repos\\finalprojectamplansforloans\\finalprojectamplansforloans\\controllers\\loaninputcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3BE5A5D9-F70D-4A3A-AEAE-19C4608EDB83}|FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.csproj|c:\\users\\lenovo\\desktop\\finalproject2\\finalprojectamplansforloans\\finalprojectamplansforloans\\controllers\\loaninputcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3BE5A5D9-F70D-4A3A-AEAE-19C4608EDB83}|FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.csproj|solutionrelative:finalprojectamplansforloans\\controllers\\loaninputcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{349033B0-3DBC-4601-8EBB-1364AD9E8F2C}|FinalProjectAmPlansForLoans.ViewModels\\FinalProjectAmPlansForLoans.ViewModels.csproj|c:\\users\\lenovo\\source\\repos\\finalprojectamplansforloans\\finalprojectamplansforloans.viewmodels\\loaninputviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{349033B0-3DBC-4601-8EBB-1364AD9E8F2C}|FinalProjectAmPlansForLoans.ViewModels\\FinalProjectAmPlansForLoans.ViewModels.csproj|solutionrelative:finalprojectamplansforloans.viewmodels\\loaninputviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3BE5A5D9-F70D-4A3A-AEAE-19C4608EDB83}|FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.csproj|c:\\users\\lenovo\\source\\repos\\finalprojectamplansforloans\\finalprojectamplansforloans\\views\\loaninput\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{3BE5A5D9-F70D-4A3A-AEAE-19C4608EDB83}|FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.csproj|c:\\users\\lenovo\\desktop\\finalproject2\\finalprojectamplansforloans\\finalprojectamplansforloans\\views\\loaninput\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3BE5A5D9-F70D-4A3A-AEAE-19C4608EDB83}|FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.csproj|solutionrelative:finalprojectamplansforloans\\views\\loaninput\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D10567D-F486-4D5B-9E61-FB4D370DFC9F}|FinalProjectAmPlansForLoans.Services\\FinalProjectAmPlansForLoans.Services.csproj|c:\\users\\lenovo\\source\\repos\\finalprojectamplansforloans\\finalprojectamplansforloans.services\\services\\implementations\\loaninputservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D10567D-F486-4D5B-9E61-FB4D370DFC9F}|FinalProjectAmPlansForLoans.Services\\FinalProjectAmPlansForLoans.Services.csproj|solutionrelative:finalprojectamplansforloans.services\\services\\implementations\\loaninputservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E971B624-F0C4-46C2-B4BA-352B44340A72}|FinalProjectAmPlansForLoans.DataAccess\\FinalProjectAmPlansForLoans.DataAccess.csproj|c:\\users\\lenovo\\desktop\\finalproject2\\finalprojectamplansforloans\\finalprojectamplansforloans.dataaccess\\repositories\\implementations\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E971B624-F0C4-46C2-B4BA-352B44340A72}|FinalProjectAmPlansForLoans.DataAccess\\FinalProjectAmPlansForLoans.DataAccess.csproj|solutionrelative:finalprojectamplansforloans.dataaccess\\repositories\\implementations\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,93 +30,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AmPlan.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Domain\\Models\\AmPlan.cs",
-              "RelativeDocumentMoniker": "FinalProjectAmPlansForLoans.Domain\\Models\\AmPlan.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Domain\\Models\\AmPlan.cs",
-              "RelativeToolTip": "FinalProjectAmPlansForLoans.Domain\\Models\\AmPlan.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAAgAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.DataAccess\\Repositories\\Implementations\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "FinalProjectAmPlansForLoans.DataAccess\\Repositories\\Implementations\\ProductRepository.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.DataAccess\\Repositories\\Implementations\\ProductRepository.cs",
+              "RelativeToolTip": "FinalProjectAmPlansForLoans.DataAccess\\Repositories\\Implementations\\ProductRepository.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T23:27:24.63Z",
+              "WhenOpened": "2024-10-27T15:32:58.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans\\Views\\LoanInput\\Index.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectAmPlansForLoans\\Views\\LoanInput\\Index.cshtml",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans\\Views\\LoanInput\\Index.cshtml",
+              "RelativeToolTip": "FinalProjectAmPlansForLoans\\Views\\LoanInput\\Index.cshtml",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAmwGAAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-27T15:27:32.864Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AmPlansDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.DataAccess\\DataContext\\AmPlansDbContext.cs",
-              "RelativeDocumentMoniker": "FinalProjectAmPlansForLoans.DataAccess\\DataContext\\AmPlansDbContext.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.DataAccess\\DataContext\\AmPlansDbContext.cs",
-              "RelativeToolTip": "FinalProjectAmPlansForLoans.DataAccess\\DataContext\\AmPlansDbContext.cs",
-              "ViewState": "AgIAAH0AAAAAAAAAAAAmwI0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T23:23:32.69Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Domain\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "FinalProjectAmPlansForLoans.Domain\\Models\\Product.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Domain\\Models\\Product.cs",
-              "RelativeToolTip": "FinalProjectAmPlansForLoans.Domain\\Models\\Product.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAowB4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T23:22:27.466Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "LoanInputService.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Services\\Services\\Implementations\\LoanInputService.cs",
-              "RelativeDocumentMoniker": "FinalProjectAmPlansForLoans.Services\\Services\\Implementations\\LoanInputService.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Services\\Services\\Implementations\\LoanInputService.cs",
-              "RelativeToolTip": "FinalProjectAmPlansForLoans.Services\\Services\\Implementations\\LoanInputService.cs",
-              "ViewState": "AgIAALUAAAAAAAAAAAAuwCMAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T23:11:22.695Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LoanInputViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.ViewModels\\LoanInputViewModel.cs",
-              "RelativeDocumentMoniker": "FinalProjectAmPlansForLoans.ViewModels\\LoanInputViewModel.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.ViewModels\\LoanInputViewModel.cs",
-              "RelativeToolTip": "FinalProjectAmPlansForLoans.ViewModels\\LoanInputViewModel.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAuwA8AAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T19:33:47.311Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans\\Views\\LoanInput\\Index.cshtml",
-              "RelativeDocumentMoniker": "FinalProjectAmPlansForLoans\\Views\\LoanInput\\Index.cshtml",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans\\Views\\LoanInput\\Index.cshtml",
-              "RelativeToolTip": "FinalProjectAmPlansForLoans\\Views\\LoanInput\\Index.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-26T18:21:50.475Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "LoanInputController.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans\\Controllers\\LoanInputController.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans\\Controllers\\LoanInputController.cs",
               "RelativeDocumentMoniker": "FinalProjectAmPlansForLoans\\Controllers\\LoanInputController.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans\\Controllers\\LoanInputController.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans\\Controllers\\LoanInputController.cs",
               "RelativeToolTip": "FinalProjectAmPlansForLoans\\Controllers\\LoanInputController.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAQwDIAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAYwEsAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T18:18:17.471Z",
+              "WhenOpened": "2024-10-27T15:25:49.403Z",
               "EditorCaption": ""
             }
           ]
