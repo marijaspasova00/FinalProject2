@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5D10567D-F486-4D5B-9E61-FB4D370DFC9F}|FinalProjectAmPlansForLoans.Services\\FinalProjectAmPlansForLoans.Services.csproj|c:\\users\\lenovo\\desktop\\finalproject2\\finalprojectamplansforloans\\finalprojectamplansforloans.services\\services\\implementations\\loaninputservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D10567D-F486-4D5B-9E61-FB4D370DFC9F}|FinalProjectAmPlansForLoans.Services\\FinalProjectAmPlansForLoans.Services.csproj|solutionrelative:finalprojectamplansforloans.services\\services\\implementations\\loaninputservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3BE5A5D9-F70D-4A3A-AEAE-19C4608EDB83}|FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.csproj|c:\\users\\lenovo\\desktop\\finalproject2\\finalprojectamplansforloans\\finalprojectamplansforloans\\views\\loaninput\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3BE5A5D9-F70D-4A3A-AEAE-19C4608EDB83}|FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.csproj|solutionrelative:finalprojectamplansforloans\\views\\loaninput\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BE5A5D9-F70D-4A3A-AEAE-19C4608EDB83}|FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.csproj|c:\\users\\lenovo\\desktop\\finalproject2\\finalprojectamplansforloans\\finalprojectamplansforloans\\controllers\\loaninputcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BE5A5D9-F70D-4A3A-AEAE-19C4608EDB83}|FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.csproj|solutionrelative:finalprojectamplansforloans\\controllers\\loaninputcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D10567D-F486-4D5B-9E61-FB4D370DFC9F}|FinalProjectAmPlansForLoans.Services\\FinalProjectAmPlansForLoans.Services.csproj|c:\\users\\lenovo\\desktop\\finalproject2\\finalprojectamplansforloans\\finalprojectamplansforloans.services\\services\\implementations\\loaninputservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D10567D-F486-4D5B-9E61-FB4D370DFC9F}|FinalProjectAmPlansForLoans.Services\\FinalProjectAmPlansForLoans.Services.csproj|solutionrelative:finalprojectamplansforloans.services\\services\\implementations\\loaninputservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E971B624-F0C4-46C2-B4BA-352B44340A72}|FinalProjectAmPlansForLoans.DataAccess\\FinalProjectAmPlansForLoans.DataAccess.csproj|c:\\users\\lenovo\\desktop\\finalproject2\\finalprojectamplansforloans\\finalprojectamplansforloans.dataaccess\\repositories\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,19 +39,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "LoanInputController.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans\\Controllers\\LoanInputController.cs",
+              "RelativeDocumentMoniker": "FinalProjectAmPlansForLoans\\Controllers\\LoanInputController.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans\\Controllers\\LoanInputController.cs",
+              "RelativeToolTip": "FinalProjectAmPlansForLoans\\Controllers\\LoanInputController.cs",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAkwIgAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T18:55:07.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans\\Views\\LoanInput\\Index.cshtml",
               "RelativeDocumentMoniker": "FinalProjectAmPlansForLoans\\Views\\LoanInput\\Index.cshtml",
               "ToolTip": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans\\Views\\LoanInput\\Index.cshtml",
               "RelativeToolTip": "FinalProjectAmPlansForLoans\\Views\\LoanInput\\Index.cshtml",
-              "ViewState": "AgIAAGIBAAAAAAAAAAAowIQBAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAJoAAAAAAAAAAAAowMcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-30T01:14:29.427Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "IProductRepository.cs",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.DataAccess\\Repositories\\IProductRepository.cs",
               "RelativeDocumentMoniker": "FinalProjectAmPlansForLoans.DataAccess\\Repositories\\IProductRepository.cs",
@@ -55,12 +72,11 @@
               "RelativeToolTip": "FinalProjectAmPlansForLoans.DataAccess\\Repositories\\IProductRepository.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAADgvxAAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T00:18:19.832Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-30T00:18:19.832Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ProductRepository.cs",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.DataAccess\\Repositories\\Implementations\\ProductRepository.cs",
               "RelativeDocumentMoniker": "FinalProjectAmPlansForLoans.DataAccess\\Repositories\\Implementations\\ProductRepository.cs",
@@ -68,18 +84,17 @@
               "RelativeToolTip": "FinalProjectAmPlansForLoans.DataAccess\\Repositories\\Implementations\\ProductRepository.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAAowC4AAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T00:17:45.802Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-30T00:17:45.802Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "LoanInputService.cs",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Services\\Services\\Implementations\\LoanInputService.cs",
               "RelativeDocumentMoniker": "FinalProjectAmPlansForLoans.Services\\Services\\Implementations\\LoanInputService.cs",
               "ToolTip": "C:\\Users\\LENOVO\\Desktop\\FinalProject2\\FinalProjectAmPlansForLoans\\FinalProjectAmPlansForLoans.Services\\Services\\Implementations\\LoanInputService.cs",
               "RelativeToolTip": "FinalProjectAmPlansForLoans.Services\\Services\\Implementations\\LoanInputService.cs",
-              "ViewState": "AgIAAPgAAAAAAAAAAAAkwAYBAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAP4BAAAAAAAAAAAkwFsBAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-30T00:05:09.525Z",
               "EditorCaption": ""

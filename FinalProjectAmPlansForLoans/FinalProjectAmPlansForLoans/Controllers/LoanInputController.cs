@@ -11,16 +11,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using FinalProjectAmPlansForLoans.Services.Services;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using FinalProjectAmPlansForLoans.DataAccess.Repositories;
 
 public class LoanInputController : Controller
 {
     private readonly AmPlansDbContext _context;
     private readonly ILoanInputService _loanInputService;
+    private readonly IProductRepository _productRepository;
 
-    public LoanInputController(AmPlansDbContext context, ILoanInputService loanInputService)
+    public LoanInputController(AmPlansDbContext context, ILoanInputService loanInputService, IProductRepository productRepository)
     {
         _context = context;
         _loanInputService = loanInputService;
+        _productRepository = productRepository;
     }
 
     public async Task<IActionResult> Index()
@@ -48,7 +51,6 @@ public class LoanInputController : Controller
     [HttpPost]
     public async Task<IActionResult> CalculateAmortization(LoanInputViewModel model)
     {
-        // Retrieve product details for validation
         var product = await _context.Products
             .Where(p => p.Id == model.SelectedProductId)
             .FirstOrDefaultAsync();
@@ -57,26 +59,20 @@ public class LoanInputController : Controller
 
         if (product != null)
         {
-            // Validate Amount
             if (model.Principal < (decimal)product.MinAmount || model.Principal > (decimal)product.MaxAmount)
             {
                 ModelState.AddModelError(nameof(model.Principal), $"Amount must be between {product.MinAmount} and {product.MaxAmount}.");
             }
-
-            // Validate Interest Rate
             if (model.InterestRate < (decimal)product.MinInterestRate || model.InterestRate > (decimal)product.MaxInterestRate)
             {
                 ModelState.AddModelError(nameof(model.InterestRate), $"Interest Rate must be between {product.MinInterestRate} and {product.MaxInterestRate}.");
             }
-
-            // Validate Number of Installments
             if (model.NumberOfInstallments < product.MinNumberOfInstallments || model.NumberOfInstallments > product.MaxNumberOfInstallments)
             {
                 ModelState.AddModelError(nameof(model.NumberOfInstallments), $"Number of Installments must be between {product.MinNumberOfInstallments} and {product.MaxNumberOfInstallments}.");
             }
         }
 
-        // Check if ModelState is valid
         if (!ModelState.IsValid)
         {
             await PopulateCombo(model);
@@ -84,7 +80,6 @@ public class LoanInputController : Controller
             return View("Index", model);
         }
 
-        // Create and save loan input
         var loanInput = new LoanInput
         {
             ProductID = model.SelectedProductId,
@@ -100,7 +95,6 @@ public class LoanInputController : Controller
         await _loanInputService.AddLoanInputAsync(loanInput);
         var amortizationPlans = await _loanInputService.GetAmortizationPlansByLoanInputAsync(loanInput.Id);
 
-        // Check if amortization plans were generated
         if (amortizationPlans == null || !amortizationPlans.Any())
         {
             ModelState.AddModelError("", "No amortization plans were generated. Please check your inputs.");
@@ -110,7 +104,6 @@ public class LoanInputController : Controller
             return View("Index", model);
         }
 
-        // Assign amortization plans to the model for display
         model.AmortizationPlans = amortizationPlans;
 
         await PopulateCombo(model);
@@ -133,5 +126,14 @@ public class LoanInputController : Controller
                                           Value = ((int)pf).ToString(),
                                           Text = pf.ToString()
                                       }).ToList();
+    }
+    public async Task<IActionResult> LoanInputPrincipalAndAdminFee(int productid)
+    {
+        var product = await _productRepository.GetByIdAsync(productid);
+        var model = new LoanInputViewModel
+        {
+            AdminFee = (decimal)product.AdminFee
+        };
+        return View(model);
     }
 }
