@@ -51,12 +51,10 @@ public class LoanInputController : Controller
     [HttpPost]
     public async Task<IActionResult> CalculateAmortization(LoanInputViewModel model)
     {
-        // Fetch the full product details based on the selected ID
         var selectedProduct = await _productRepository.GetByIdAsync(model.SelectedProductId);
 
         if (selectedProduct != null)
         {
-            // Set the AdminFee in the view model
             model.AdminFee = (decimal)selectedProduct.AdminFee;
         }
         var product = await _context.Products

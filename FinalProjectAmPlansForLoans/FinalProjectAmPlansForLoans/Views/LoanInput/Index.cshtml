@@ -6,11 +6,16 @@
     ViewBag.Title = "Loan Amortization Plan";
 }
 
+
 <style>
-    /* General Page Styles */
+    html {
+        background-color: #4a4a4a;
+    }
+
     body {
         font-family: Arial, sans-serif;
-        background-color: #f9f9f9;
+        background-color: #001f3f; 
+        color: #e0e0e0; 
         margin: 0;
         padding: 0;
     }
@@ -20,40 +25,51 @@
         margin: 20px 0;
         font-size: 2.5rem;
         font-weight: 400;
-        color: #007bff;
-        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        color: #00aaff; 
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
         letter-spacing: 1px;
         line-height: 1.3;
-        border-bottom: 2px solid #007bff;
+        border-bottom: 2px solid #00aaff; 
         padding-bottom: 10px;
     }
 
     .container {
         max-width: 800px;
-        margin: 20px auto;
+        margin: 40px auto; 
         padding: 20px;
-        background-color: #fff;
+        background-color: #3e3e3e;
         border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
     }
 
     .form-group {
         margin-bottom: 15px;
     }
 
+    label {
+        color: #00aaff; 
+    }
+
     .form-control {
         width: 100%;
         padding: 10px;
         font-size: 16px;
-        color: #333;
-        border: 1px solid #ddd;
+        color: #ffffff; 
+        border: 1px solid #555; 
         border-radius: 5px;
+        background-color: #333; 
+    }
+
+    .form-control:focus {
+        border-color: #007bff; 
+        background-color: #444; 
+        outline: none; 
     }
 
     button[type="submit"] {
         width: 100%;
-        background-color: #007bff;
-        color: #fff;
+        background-color: #007bff; 
+        color: #fff; 
         padding: 12px;
         font-size: 16px;
         border: none;
@@ -62,74 +78,79 @@
         transition: background-color 0.3s;
     }
 
-        button[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-
-    .text-danger {
-        color: red;
+    button[type="submit"]:hover {
+        background-color: #0056b3; 
     }
 
-    /* Table Styling */
+    .text-danger {
+        color: #ff4d4d; 
+    }
+
     .table-container {
         width: 100%;
-        overflow-x: auto;
+        overflow-x: auto; 
         margin-top: 20px;
-        border: 1px solid #ddd;
         border-radius: 5px;
+        background-color: #444; 
+        padding: 10px; 
     }
 
     .table {
         width: 100%;
         border-collapse: collapse;
         font-size: 15px;
-        min-width: 600px;
+        min-width: 600px; 
+        background-color: #444; 
+        color: #e0e0e0;
     }
 
-        .table thead th {
-            background-color: #007bff;
-            color: #fff;
-            padding: 12px;
-            text-align: left;
-            border-bottom: 2px solid #0056b3;
-        }
+    .table thead th {
+        background-color: #007bff; 
+        color: #fff;
+        padding: 12px;
+        text-align: left;
+        border-bottom: 2px solid #0056b3;
+    }
 
-        .table tbody td {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-            text-align: left;
-        }
+    .table tbody td {
+        padding: 10px;
+        border-bottom: 1px solid #555;
+        text-align: left;
+        color: #ffffff;
+    }
 
-        .table tbody tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
+    .table tbody tr:nth-child(even) {
+        background-color: #333; 
+    }
 
-        .table tbody tr:hover {
-            background-color: #f1f1f1;
-        }
+    .table tbody tr:hover {
+        background-color: #555; 
+    }
 
-    /* Custom Row Styling */
     .summary-row {
         font-weight: bold;
-        background-color: #f0f8ff;
+        background-color: #007bff; 
+        color: #ffffff; 
     }
 
-    /* Responsive Styling */
     @@media (max-width: 768px) {
         .container {
             width: 90%;
         }
 
-        .table-container {
-            overflow-x: auto;
-        }
-
         .table {
             font-size: 14px;
         }
+
+        .table tbody td,
+        .table thead th {
+            max-width: 100px; 
+            overflow: hidden;
+            text-overflow: ellipsis; 
+            white-space: nowrap; 
+        }
     }
 </style>
-
 <h2>Loan Amortization Schedule</h2>
 
 <div class="container">
@@ -185,14 +206,12 @@
                 </thead>
                 <tbody>
 
-                    <!-- Summary Row for Principal and Admin Fee -->
-                    <!-- Summary Row for Principal and Admin Fee -->
                     <tr class="summary-row">
                         <td colspan="3">0</td>
                         <td>@Model.Principal.ToString("N2")</td>
-                        <td></td> <!-- Leave Interest empty here if it's not relevant -->
-                        <td></td> <!-- Leave Remaining Amount empty if not applicable -->
-                        <td>@Model.AdminFee.ToString("N2")</td>  <!-- Display Admin Fee correctly -->
+                        <td></td> 
+                        <td></td> 
+                        <td>@Model.AdminFee.ToString("N2")</td>  
                         <td></td>
                     </tr>
                  

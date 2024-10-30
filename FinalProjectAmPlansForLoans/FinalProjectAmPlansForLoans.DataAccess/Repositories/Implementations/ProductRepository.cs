@@ -43,7 +43,6 @@ public class ProductRepository : IProductRepository
             await _context.SaveChangesAsync();
         }
     }
-    // Method to get admin fee by product ID asynchronously
     public decimal GetAdminFeeByProductId(int productId)
     {
         var product = _context.Products.Find(productId);
@@ -54,9 +53,6 @@ public class ProductRepository : IProductRepository
 
         return (decimal)product.AdminFee;
     }
-
-
-
 
 }
 
