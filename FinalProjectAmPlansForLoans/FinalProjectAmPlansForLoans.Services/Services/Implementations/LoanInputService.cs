@@ -275,6 +275,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using FinalProjectAmPlansForLoans.DataAccess.DataContext;
+using FinalProjectAmPlansForLoans.Services.Services.Implementations;
 
 namespace AmortizationPlansForLoansFinalProject.Services.Services.Implementations
 {
@@ -298,7 +299,6 @@ namespace AmortizationPlansForLoansFinalProject.Services.Services.Implementation
             _mapper = mapper;
             _context = context;
         }
-
         public async Task AddLoanInputAsync(LoanInputViewModel loanInputViewModel)
         {
             var loanInput = _mapper.Map<LoanInput>(loanInputViewModel);
@@ -341,7 +341,6 @@ namespace AmortizationPlansForLoansFinalProject.Services.Services.Implementation
 
         private AmPlan CalculateAmortizationPlan(LoanInput loanInput)
         {
-            
             var amortizationPlan = new AmPlan
             {
                 LoanInputID = loanInput.Id,
@@ -352,7 +351,6 @@ namespace AmortizationPlansForLoansFinalProject.Services.Services.Implementation
                 ClosingDate = loanInput.ClosingDate,
                 Installments = new List<decimal>()
             };
-
 
             for (int i = 1; i <= loanInput.NumberOfInstallments; i++)
             {
@@ -379,8 +377,6 @@ namespace AmortizationPlansForLoansFinalProject.Services.Services.Implementation
             amortizationPlan.Interest = amortizationPlan.Installments.Sum() - loanInput.Principal;
             return amortizationPlan;
         }
-
-
 
         private decimal CalculateMonthlyPayment(decimal principal, decimal annualRate, int totalPayments)
         {
@@ -436,7 +432,7 @@ namespace AmortizationPlansForLoansFinalProject.Services.Services.Implementation
                             Interest = annualEntry.Interest,
                             RemainingAmount = annualEntry.RemainingAmount,
                             PaymentFrequency = loanInput.PaymentFrequency,
-                            ClosingDate = DateTime.MinValue, // Temporary value, will update later
+                            ClosingDate = DateTime.MinValue, 
                         });
                         installmentDate = installmentDate.AddYears(1);
                         continue;
@@ -473,7 +469,6 @@ namespace AmortizationPlansForLoansFinalProject.Services.Services.Implementation
                 };
             }
 
-            // Update the ClosingDate for each installment to the last PaymentDate
             var finalPaymentDate = amortizationPlans.Last().PaymentDate;
             foreach (var plan in amortizationPlans)
             {
@@ -482,8 +477,6 @@ namespace AmortizationPlansForLoansFinalProject.Services.Services.Implementation
 
             return _mapper.Map<IEnumerable<AmPlanViewModel>>(amortizationPlans);
         }
-
-
 
         // Annual plan calculation method
         public List<AmPlan> CalculateAnnualAmortizationPlan(decimal principal, double annualInterestRate, int totalYears)
@@ -512,6 +505,11 @@ namespace AmortizationPlansForLoansFinalProject.Services.Services.Implementation
             }
 
             return amortizationPlan;
+        }
+        public async Task<decimal> GetAdminFeeByProductIdAsync(int productId)
+        {
+            var product = await _productRepository.GetByIdAsync(productId);
+            return (decimal)(product?.AdminFee ?? 0); // Return the admin fee, or 0 if not found
         }
         public async Task AddLoanInputAsync(LoanInput loanInput)
         {

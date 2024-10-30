@@ -134,10 +134,9 @@
 
 <div class="container">
     <form asp-action="CalculateAmortization" method="post">
-        <select asp-for="SelectedProductId" asp-items="Model.Products" class="form-control">
+        <select id="productSelect" asp-for="SelectedProductId" asp-items="Model.Products" class="form-control">
             <option value="">-- Select Product --</option>
         </select>
-
         <div class="form-group">
             <label asp-for="Principal">Principal Amount:</label>
             <input asp-for="Principal" type="number" class="form-control" />
@@ -185,7 +184,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+
                     <!-- Summary Row for Principal and Admin Fee -->
                     <!-- Summary Row for Principal and Admin Fee -->
                     <tr class="summary-row">
@@ -193,11 +192,10 @@
                         <td>@Model.Principal.ToString("N2")</td>
                         <td></td> <!-- Leave Interest empty here if it's not relevant -->
                         <td></td> <!-- Leave Remaining Amount empty if not applicable -->
-                        <td>@Model.AdminFee.ToString("N2")</td> <!-- Display Admin Fee correctly -->
+                        <td>@Model.AdminFee.ToString("N2")</td>  <!-- Display Admin Fee correctly -->
                         <td></td>
                     </tr>
-
-
+                 
                     <!-- Amortization Plan Rows -->
                     @foreach (var plan in Model.AmortizationPlans)
                     {

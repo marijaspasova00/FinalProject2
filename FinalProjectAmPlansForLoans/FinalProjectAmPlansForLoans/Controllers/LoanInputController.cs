@@ -51,6 +51,14 @@ public class LoanInputController : Controller
     [HttpPost]
     public async Task<IActionResult> CalculateAmortization(LoanInputViewModel model)
     {
+        // Fetch the full product details based on the selected ID
+        var selectedProduct = await _productRepository.GetByIdAsync(model.SelectedProductId);
+
+        if (selectedProduct != null)
+        {
+            // Set the AdminFee in the view model
+            model.AdminFee = (decimal)selectedProduct.AdminFee;
+        }
         var product = await _context.Products
             .Where(p => p.Id == model.SelectedProductId)
             .FirstOrDefaultAsync();
@@ -87,7 +95,7 @@ public class LoanInputController : Controller
             InterestRate = model.InterestRate,
             NumberOfInstallments = model.NumberOfInstallments,
             PaymentFrequency = (PaymentFrequency)model.SelectedPaymentFrequency,
-            AdminFee = 0,
+            AdminFee = (decimal)(product?.AdminFee ?? 0),
             FirstInstallmentDate = DateTime.Now,
             ClosingDate = DateTime.Now.AddMonths(model.NumberOfInstallments)
         };
@@ -127,13 +135,16 @@ public class LoanInputController : Controller
                                           Text = pf.ToString()
                                       }).ToList();
     }
-    public async Task<IActionResult> LoanInputPrincipalAndAdminFee(int productid)
+
+    [HttpGet]
+    public async Task<JsonResult> GetAdminFee(int productId)
     {
-        var product = await _productRepository.GetByIdAsync(productid);
-        var model = new LoanInputViewModel
+        var product = await _productRepository.GetByIdAsync(productId);
+        if (product == null)
         {
-            AdminFee = (decimal)product.AdminFee
-        };
-        return View(model);
+            return Json(new { adminFee = 0.00 });
+        }
+        return Json(new { adminFee = product.AdminFee });
     }
+
 }
