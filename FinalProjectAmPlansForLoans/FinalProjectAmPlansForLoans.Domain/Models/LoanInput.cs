@@ -13,7 +13,7 @@ namespace FinalProjectAmPlansForLoans.Domain.Models
         public int ProductID { get; set; }
         [ForeignKey("ProductID")]
         public Product Product { get; set; }
-        public DateTime AgreementDate { get; set; }
+        public DateTime AgreementDate { get; set; } = DateTime.Now;
         public decimal Principal { get; set; }
         public decimal InterestRate { get; set; }
         public PaymentFrequency PaymentFrequency { get; set; }

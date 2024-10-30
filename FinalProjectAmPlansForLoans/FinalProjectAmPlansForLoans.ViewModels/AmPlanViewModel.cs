@@ -20,7 +20,6 @@ namespace FinalProjectAmPlansForLoans.ViewModels
         public decimal Interest { get; set; }
         public decimal RemainingAmount { get; set; }
         public decimal Expense { get; set; }
-        public DateTime FirstInstallmentDate { get; set; }
         public DateTime ClosingDate { get; set; }
         public string PaymentFrequency { get; set; }
     }

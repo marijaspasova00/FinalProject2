@@ -13,7 +13,6 @@ namespace FinalProjectAmPlansForLoans.Domain.Models
         [ForeignKey("LoanInputID")]
         public int LoanInputID { get; set; }
         public LoanInput LoanInput { get; set; }
-
         public int ProductID { get; set; }
         public Product Product { get; set; }
         public int NoInstallment { get; set; }
@@ -25,7 +24,6 @@ namespace FinalProjectAmPlansForLoans.Domain.Models
         public decimal Interest { get; set; }
         public decimal RemainingAmount { get; set; }
         public decimal Expense { get; set; } 
-        public DateTime FirstInstallmentDate { get; set; }
         public DateTime ClosingDate { get; set; }
         public PaymentFrequency PaymentFrequency { get; set; }
         public List<decimal> Installments { get; set; } = new List<decimal>();

@@ -21,10 +21,5 @@ namespace FinalProjectAmPlansForLoans.Domain.Models
         public int MinNumberOfInstallments { get; set; }
         public int MaxNumberOfInstallments { get; set; }
         public double AdminFee { get; set; }
-        //[ForeignKey("LoanInputId")]
-        //public virtual ICollection<LoanInput> LoanInputs { get; set; }
-
-        //[ForeignKey("AmPlanId")]
-        //public virtual ICollection<AmPlan> AmortizationPlans { get; set; }
     }
 }

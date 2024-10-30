@@ -10,6 +10,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using FinalProjectAmPlansForLoans.Services.Services;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 public class LoanInputController : Controller
 {
@@ -52,6 +53,8 @@ public class LoanInputController : Controller
             .Where(p => p.Id == model.SelectedProductId)
             .FirstOrDefaultAsync();
 
+        ModelState.Clear();
+
         if (product != null)
         {
             // Validate Amount
@@ -76,20 +79,7 @@ public class LoanInputController : Controller
         // Check if ModelState is valid
         if (!ModelState.IsValid)
         {
-            // Re-populate dropdown lists if there are validation errors
-            model.Products = await _context.Products.Select(p => new SelectListItem
-            {
-                Value = p.Id.ToString(),
-                Text = p.ProductName
-            }).ToListAsync();
-
-            model.PaymentFrequencies = Enum.GetValues(typeof(PaymentFrequency))
-                                          .Cast<PaymentFrequency>()
-                                          .Select(pf => new SelectListItem
-                                          {
-                                              Value = ((int)pf).ToString(),
-                                              Text = pf.ToString()
-                                          }).ToList();
+            await PopulateCombo(model);
 
             return View("Index", model);
         }
@@ -114,19 +104,8 @@ public class LoanInputController : Controller
         if (amortizationPlans == null || !amortizationPlans.Any())
         {
             ModelState.AddModelError("", "No amortization plans were generated. Please check your inputs.");
-            model.Products = await _context.Products.Select(p => new SelectListItem
-            {
-                Value = p.Id.ToString(),
-                Text = p.ProductName
-            }).ToListAsync();
 
-            model.PaymentFrequencies = Enum.GetValues(typeof(PaymentFrequency))
-                                          .Cast<PaymentFrequency>()
-                                          .Select(pf => new SelectListItem
-                                          {
-                                              Value = ((int)pf).ToString(),
-                                              Text = pf.ToString()
-                                          }).ToList();
+            await PopulateCombo(model);
 
             return View("Index", model);
         }
@@ -134,6 +113,25 @@ public class LoanInputController : Controller
         // Assign amortization plans to the model for display
         model.AmortizationPlans = amortizationPlans;
 
+        await PopulateCombo(model);
+
         return View("Index", model);
+    }
+
+    private async Task PopulateCombo(LoanInputViewModel model)
+    {
+            model.Products = await _context.Products.Select(p => new SelectListItem
+            {
+                Value = p.Id.ToString(),
+                Text = p.ProductName
+            }).ToListAsync();
+
+        model.PaymentFrequencies = Enum.GetValues(typeof(PaymentFrequency))
+                                      .Cast<PaymentFrequency>()
+                                      .Select(pf => new SelectListItem
+                                      {
+                                          Value = ((int)pf).ToString(),
+                                          Text = pf.ToString()
+                                      }).ToList();
     }
 }

@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FinalProjectAmPlansForLoans.Domain
-build_property.ProjectDir = C:\Users\LENOVO\source\repos\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Domain\
+build_property.ProjectDir = C:\Users\LENOVO\Desktop\FinalProject2\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans.Domain\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

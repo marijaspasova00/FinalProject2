@@ -78,6 +78,8 @@ namespace AmortizationPlansForLoansFinalProject.Services.Services.Implementation
 
         private AmPlan CalculateAmortizationPlan(LoanInput loanInput)
         {
+            decimal adminFee = _productRepository.GetAdminFeeByProductId(loanInput.ProductID);
+
             var amortizationPlan = new AmPlan
             {
                 LoanInputID = loanInput.Id,
@@ -85,14 +87,33 @@ namespace AmortizationPlansForLoansFinalProject.Services.Services.Implementation
                 PaymentFrequency = loanInput.PaymentFrequency,
                 NoInstallment = loanInput.NumberOfInstallments,
                 Principal = loanInput.Principal,
-                FirstInstallmentDate = loanInput.FirstInstallmentDate,
                 ClosingDate = loanInput.ClosingDate,
                 Installments = new List<decimal>()
             };
-
+            
+            
             for (int i = 1; i <= loanInput.NumberOfInstallments; i++)
             {
+                
                 decimal installmentAmount = 0;
+                if (i == 1)
+                {
+                    switch (loanInput.PaymentFrequency)
+                    {
+                        case PaymentFrequency.Monthly:
+                            installmentAmount = CalculateMonthlyPayment(loanInput.Principal, loanInput.InterestRate, loanInput.NumberOfInstallments) + adminFee;
+                            break;
+                        case PaymentFrequency.Quarterly:
+                            installmentAmount = CalculateQuarterlyPayment(loanInput.Principal, loanInput.InterestRate, loanInput.NumberOfInstallments) + adminFee;
+                            break;
+                        case PaymentFrequency.Yearly:
+                            installmentAmount = CalculateYearlyPayment(loanInput.Principal, loanInput.InterestRate, loanInput.NumberOfInstallments) + adminFee;
+                            break;
+                        default:
+                            throw new ArgumentException("Invalid payment frequency.");
+                    }
+                }
+                else
                 switch (loanInput.PaymentFrequency)
                 {
                     case PaymentFrequency.Monthly:
@@ -102,18 +123,20 @@ namespace AmortizationPlansForLoansFinalProject.Services.Services.Implementation
                         installmentAmount = CalculateQuarterlyPayment(loanInput.Principal, loanInput.InterestRate, loanInput.NumberOfInstallments);
                         break;
                     case PaymentFrequency.Yearly:
-                        installmentAmount = CalculateYearlyPayment(loanInput.Principal, loanInput.InterestRate);
+                        installmentAmount = CalculateYearlyPayment(loanInput.Principal, loanInput.InterestRate, loanInput.NumberOfInstallments);
                         break;
                     default:
                         throw new ArgumentException("Invalid payment frequency.");
                 }
 
-                amortizationPlan.Installments.Add(installmentAmount); // Add installment amount to the list
+                amortizationPlan.Installments.Add(installmentAmount); 
             }
 
-            amortizationPlan.Interest = amortizationPlan.Installments.Sum() - loanInput.Principal; // Calculate total interest paid
+            amortizationPlan.Interest = amortizationPlan.Installments.Sum() - loanInput.Principal; 
             return amortizationPlan;
         }
+      
+
 
         private decimal CalculateMonthlyPayment(decimal principal, decimal annualRate, int totalPayments)
         {
@@ -127,19 +150,19 @@ namespace AmortizationPlansForLoansFinalProject.Services.Services.Implementation
             return principal * quarterlyRate / (1 - (decimal)Math.Pow((double)(1 + quarterlyRate), -totalPayments));
         }
 
-        private decimal CalculateYearlyPayment(decimal principal, decimal annualRate)
+        private decimal CalculateYearlyPayment(decimal principal, decimal annualRate, int numberOfInstallments)
         {
             decimal yearlyRate = annualRate / 100;
             return principal * yearlyRate;
         }
-
         public async Task<IEnumerable<AmPlanViewModel>> GetAmortizationPlansByLoanInputAsync(int loanInputId)
         {
-            var loanInput = await _loanInputRepository.GetLoanInputByIdAsync(loanInputId); 
+            var loanInput = await _loanInputRepository.GetLoanInputByIdAsync(loanInputId);
             if (loanInput == null)
                 throw new ArgumentException("Invalid loan input ID.");
 
             var amortizationPlans = new List<AmPlan>();
+            decimal remainingPrincipal = loanInput.Principal;
 
             for (int i = 1; i <= loanInput.NumberOfInstallments; i++)
             {
@@ -150,41 +173,99 @@ namespace AmortizationPlansForLoansFinalProject.Services.Services.Implementation
                 {
                     case PaymentFrequency.Monthly:
                         installmentAmount = CalculateMonthlyPayment(loanInput.Principal, loanInput.InterestRate, loanInput.NumberOfInstallments);
-                        installmentDate = loanInput.FirstInstallmentDate.AddMonths(i - 1); // Monthly increment
+                        installmentDate = loanInput.FirstInstallmentDate.AddMonths(i - 1);
                         break;
                     case PaymentFrequency.Quarterly:
                         installmentAmount = CalculateQuarterlyPayment(loanInput.Principal, loanInput.InterestRate, loanInput.NumberOfInstallments);
-                        installmentDate = loanInput.FirstInstallmentDate.AddMonths(3 * (i - 1)); // Quarterly increment
+                        installmentDate = loanInput.FirstInstallmentDate.AddMonths(3 * (i - 1));
                         break;
                     case PaymentFrequency.Yearly:
-                        installmentAmount = CalculateYearlyPayment(loanInput.Principal, loanInput.InterestRate);
-                        installmentDate = loanInput.FirstInstallmentDate.AddYears(i - 1); // Yearly increment
-                        break;
+                        var annualPlan = CalculateAnnualAmortizationPlan(loanInput.Principal, (double)loanInput.InterestRate, loanInput.NumberOfInstallments);
+                        installmentAmount = annualPlan[i - 1].TotalAmount;
+                        installmentDate = loanInput.FirstInstallmentDate.AddYears(i - 1);
+                        var annualEntry = annualPlan[i - 1];
+                        amortizationPlans.Add(new AmPlan
+                        {
+                            LoanInputID = loanInput.Id,
+                            NoInstallment = i,
+                            TotalAmount = annualEntry.TotalAmount,
+                            PaymentDate = annualEntry.PaymentDate,
+                            Principal = annualEntry.Principal,
+                            Interest = annualEntry.Interest,
+                            RemainingAmount = annualEntry.RemainingAmount,
+                            PaymentFrequency = loanInput.PaymentFrequency,
+                            ClosingDate = loanInput.ClosingDate,
+                        });
+                        continue;
+
                     default:
                         throw new ArgumentException("Invalid payment frequency.");
                 }
 
-                var amortizationPlan = new AmPlan
+                decimal interestRatePerPeriod;
+                switch (loanInput.PaymentFrequency)
+                {
+                    case PaymentFrequency.Monthly:
+                        interestRatePerPeriod = loanInput.InterestRate / 100 / 12;
+                        break;
+                    case PaymentFrequency.Quarterly:
+                        interestRatePerPeriod = loanInput.InterestRate / 100 / 4;
+                        break;
+                    default:
+                        interestRatePerPeriod = loanInput.InterestRate / 100;
+                        break;
+                }
+
+                decimal interestAmount = remainingPrincipal * interestRatePerPeriod;
+                decimal principalAmount = installmentAmount - interestAmount;
+
+                remainingPrincipal -= principalAmount;
+
+                amortizationPlans.Add(new AmPlan
                 {
                     LoanInputID = loanInput.Id,
                     NoInstallment = i,
                     TotalAmount = installmentAmount,
                     PaymentDate = installmentDate,
-                    Principal = loanInput.Principal,
-                    Interest = loanInput.InterestRate,
+                    Principal = principalAmount,
+                    Interest = interestAmount,
+                    RemainingAmount = remainingPrincipal,
                     PaymentFrequency = loanInput.PaymentFrequency,
-                    DateFrom = loanInput.FirstInstallmentDate.Date,
-                    DateTo = installmentDate,
                     ClosingDate = loanInput.ClosingDate,
-                };
-
-                amortizationPlans.Add(amortizationPlan);
+                });
             }
-
 
             return _mapper.Map<IEnumerable<AmPlanViewModel>>(amortizationPlans);
         }
 
+        // Annual plan calculation method
+        public List<AmPlan> CalculateAnnualAmortizationPlan(decimal principal, double annualInterestRate, int totalYears)
+        {
+            List<AmPlan> amortizationPlan = new List<AmPlan>();
+            decimal remainingBalance = principal;
+            double r = annualInterestRate / 100;
+            decimal annualPayment = principal * (decimal)(r / (1 - Math.Pow(1 + r, -totalYears)));
+
+            for (int year = 1; year <= totalYears; year++)
+            {
+                decimal interest = remainingBalance * (decimal)r;
+                decimal principalPortion = annualPayment - interest;
+
+                remainingBalance -= principalPortion;
+
+                amortizationPlan.Add(new AmPlan
+                {
+                    NoInstallment = year,
+                    PaymentDate = DateTime.Now.AddYears(year),
+                    TotalAmount = annualPayment,
+                    Principal = principalPortion,
+                    Interest = interest,
+                    RemainingAmount = remainingBalance
+                });
+            }
+
+            return amortizationPlan;
+        }
         public async Task AddLoanInputAsync(LoanInput loanInput)
         {
             if (loanInput == null)
