@@ -109,6 +109,7 @@ namespace AmortizationPlansForLoansFinalProject.Services.Services.Implementation
                     }
 
                 amortizationPlan.Installments.Add(installmentAmount);
+
             }
            
             amortizationPlan.Interest = amortizationPlan.Installments.Sum() - loanInput.Principal;
@@ -255,7 +256,6 @@ namespace AmortizationPlansForLoansFinalProject.Services.Services.Implementation
                 throw new ArgumentNullException(nameof(loanInput), "LoanInput cannot be null");
             }
             await _context.LoanInputs.AddAsync(loanInput);
-
             await _context.SaveChangesAsync();
         }
     }

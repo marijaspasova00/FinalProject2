@@ -321,3 +321,4 @@ C:\Users\LENOVO\Desktop\FinalProject2\FinalProjectAmPlansForLoans\FinalProjectAm
 C:\Users\LENOVO\Desktop\FinalProject2\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans\obj\Debug\net8.0\FinalProjectAmPlansForLoans.pdb
 C:\Users\LENOVO\Desktop\FinalProject2\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans\obj\Debug\net8.0\FinalProjectAmPlansForLoans.genruntimeconfig.cache
 C:\Users\LENOVO\Desktop\FinalProject2\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans\obj\Debug\net8.0\ref\FinalProjectAmPlansForLoans.dll
+C:\Users\LENOVO\Desktop\FinalProject2\FinalProjectAmPlansForLoans\FinalProjectAmPlansForLoans\bin\Debug\net8.0\Chart.Mvc.dll

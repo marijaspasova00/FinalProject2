@@ -18,12 +18,14 @@ public class LoanInputController : Controller
     private readonly AmPlansDbContext _context;
     private readonly ILoanInputService _loanInputService;
     private readonly IProductRepository _productRepository;
+    private readonly IAmPlanService _amPlanService;
 
-    public LoanInputController(AmPlansDbContext context, ILoanInputService loanInputService, IProductRepository productRepository)
+    public LoanInputController(AmPlansDbContext context, ILoanInputService loanInputService, IProductRepository productRepository, IAmPlanService amPlanService)
     {
         _context = context;
         _loanInputService = loanInputService;
         _productRepository = productRepository;
+        _amPlanService = amPlanService;
     }
 
     public async Task<IActionResult> Index()
@@ -109,7 +111,13 @@ public class LoanInputController : Controller
 
             return View("Index", model);
         }
+        foreach (var amPlan in amortizationPlans)
+        {
+            amPlan.ProductID = loanInput.ProductID;
+            await _amPlanService.AddAmortizationPlanAsync(amPlan);
+        }
 
+        model.AmortizationPlans = amortizationPlans;
         model.AmortizationPlans = amortizationPlans;
 
         await PopulateCombo(model);

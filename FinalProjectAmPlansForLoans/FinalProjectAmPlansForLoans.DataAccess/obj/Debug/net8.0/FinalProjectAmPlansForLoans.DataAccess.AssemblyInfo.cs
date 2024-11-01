@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FinalProjectAmPlansForLoans.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d3a32767e5f1ee362d7e637d3e43bfb0464dd1c5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3496bca0ad7071b84a741650a36b2466fdd47c4")]
 [assembly: System.Reflection.AssemblyProductAttribute("FinalProjectAmPlansForLoans.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FinalProjectAmPlansForLoans.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
